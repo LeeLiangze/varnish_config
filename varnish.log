@@ -1,0 +1,1076 @@
+Last login: Mon Mar 19 10:30:25 on ttys001
+➜  ngwf git:(ngwf_test_2) ✗ cd
+➜  ~ clear 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+➜  ~ ssh ngkm@192.168.20.139
+You have logged onto a secured server All accesses logged
+ngkm@192.168.20.139's password: 
+Last login: Sat Mar 17 11:39:10 2018 from 192.168.95.43
+You have logged onto a secured server All accesses logged
+ngkm@LY1F-R021705-VM13:[/home/ngkm]cd varnish
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]ls
+bin  conf  default.vcl.zip  include  lib  sbin  share  var
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]cd conf/
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish/conf]vi default.vcl 
+
+
+
+
+
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]clea
+clean-binary-files  clear               
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]clear 
+
+
+
+
+
+
+
+
+
+
+
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]ps -ef | grep varnish
+ngkm      40721      1  0 Mar17 ?        00:00:10 ./sbin/varnishd -f /home/ngkm/varnish/conf/default.vcl -s malloc,2G -T 127.0.0.1:6082 -a :8082
+ngkm      40731  40721  0 Mar17 ?        00:01:04 ./sbin/varnishd -f /home/ngkm/varnish/conf/default.vcl -s malloc,2G -T 127.0.0.1:6082 -a :8082
+ngkm      81232  61005  0 16:32 pts/2    00:00:00 grep --color=auto varnish
+ngkm     126501      1  0 Mar13 ?        00:12:11 ./varnishlog -a -w /home/ngkm/varnish/var/varnish.log
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]lsof -i :6082
+COMMAND    PID USER   FD   TYPE   DEVICE SIZE/OFF NODE NAME
+varnishd 40721 ngkm    8u  IPv4 45550397      0t0  TCP localhost:6082 (LISTEN)
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]kill 40721
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]timed out waiting for input: auto-logout
+Connection to 192.168.20.139 closed.
+➜  ~ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+➜  ~ ssh ngkm@192.168.20.139
+You have logged onto a secured server All accesses logged
+ngkm@192.168.20.139's password: 
+Last login: Tue Mar 20 14:43:08 2018 from 192.168.95.43
+You have logged onto a secured server All accesses logged
+ngkm@LY1F-R021705-VM13:[/home/ngkm]./sbin/varnishd -f /home/ngkm/varnish/conf/default.vcl -s malloc,2G -T 127.0.0.1:6082 -a :8082
+-bash: ./sbin/varnishd: No such file or directory
+ngkm@LY1F-R021705-VM13:[/home/ngkm]cd varnish
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]./sbin/varnishd -f /home/ngkm/varnish/conf/default.vcl -s malloc,2G -T 127.0.0.1:6082 -a :8082
+Error:
+Message from VCC-compiler:
+Unknown variable 'req.backend'
+At: ('/home/ngkm/varnish/conf/default.vcl' Line 137 Pos 13)
+        set req.backend = default;
+------------###########-----------
+
+Running VCC-compiler failed, exited with 2
+VCL compilation failed
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]vi conf/default.vcl 
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]./sbin/varnishd -f /home/ngkm/varnish/conf/default.vcl -s malloc,2G -T 127.0.0.1:6082 -a :8082
+Error:
+Message from VCC-compiler:
+Unknown variable 'req.backend'
+At: ('/home/ngkm/varnish/conf/default.vcl' Line 137 Pos 13)
+        set req.backend = default;
+------------###########-----------
+
+Running VCC-compiler failed, exited with 2
+VCL compilation failed
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]vi conf/default.vcl 
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]./sbin/varnishd -f /home/ngkm/varnish/conf/default.vcl -s malloc,2G -T 127.0.0.1:6082 -a :8082
+Error:
+Message from VCC-compiler:
+Unknown variable 'req.backend'
+At: ('/home/ngkm/varnish/conf/default.vcl' Line 137 Pos 13)
+        set req.backend = default;
+------------###########-----------
+
+Running VCC-compiler failed, exited with 2
+VCL compilation failed
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]vi conf/default.vcl 
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]./sbin/varnishd -f /home/ngkm/varnish/conf/default.vcl -s malloc,2G -T 127.0.0.1:6082 -a :8082
+Error:
+Message from VCC-compiler:
+Unknown variable 'req.backend'
+At: ('/home/ngkm/varnish/conf/default.vcl' Line 148 Pos 13)
+        set req.backend = oauth;
+------------###########---------
+
+Running VCC-compiler failed, exited with 2
+VCL compilation failed
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]vi conf/default.vcl 
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]./sbin/varnishd -f /home/ngkm/varnish/conf/default.vcl -s malloc,2G -T 127.0.0.1:6082 -a :8082
+Error:
+Message from VCC-compiler:
+Unknown variable 'req.backend'
+At: ('/home/ngkm/varnish/conf/default.vcl' Line 137 Pos 13)
+        set req.backend = default;
+------------###########-----------
+
+Running VCC-compiler failed, exited with 2
+VCL compilation failed
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]vi conf/default.vcl 
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]./sbin/varnishd -f /home/ngkm/varnish/conf/default.vcl -s malloc,2G -T 127.0.0.1:6082 -a :8082
+Error:
+Message from VCC-compiler:
+Unknown variable 'req.backend'
+At: ('/home/ngkm/varnish/conf/default.vcl' Line 137 Pos 13)
+        set req.backend = server1;
+------------###########-----------
+
+Running VCC-compiler failed, exited with 2
+VCL compilation failed
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]vi conf/default.vcl 
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]./sbin/varnishd -f /home/ngkm/varnish/conf/default.vcl -s malloc,2G -T 127.0.0.1:6082 -a :8082
+Error:
+Message from VCC-compiler:
+Unknown argument 'default'
+('/home/ngkm/varnish/conf/default.vcl' Line 137 Pos 45)
+        set req.backend_hint = vdir.backend(default);
+--------------------------------------------#######--
+
+Running VCC-compiler failed, exited with 2
+VCL compilation failed
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]vi conf/default.vcl 
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]./sbin/varnishd -f /home/ngkm/varnish/conf/default.vcl -s malloc,2G -T 127.0.0.1:6082 -a :8082
+Error:
+Message from VCC-compiler:
+Unknown argument 'default'
+('/home/ngkm/varnish/conf/default.vcl' Line 76 Pos 45)
+        set req.backend_hint = vdir.backend(default);
+--------------------------------------------#######--
+
+Running VCC-compiler failed, exited with 2
+VCL compilation failed
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]vi conf/default.vcl 
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]./sbin/varnishd -f /home/ngkm/varnish/conf/default.vcl -s malloc,2G -T 127.0.0.1:6082 -a :8082
+Error:
+Message from VCC-compiler:
+Symbol not found: 'req.backend' (expected type BOOL):
+('/home/ngkm/varnish/conf/default.vcl' Line 224 Pos 32)
+  if (req.http.x-auth-token && req.backend == oauth) {
+-------------------------------###########------------
+
+Running VCC-compiler failed, exited with 2
+VCL compilation failed
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]vi conf/default.vcl 
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]./sbin/varnishd -f /home/ngkm/varnish/conf/default.vcl -s malloc,2G -T 127.0.0.1:6082 -a :8082
+Error:
+Message from VCC-compiler:
+VCL sub's named 'vcl*' are reserved names.
+('/home/ngkm/varnish/conf/default.vcl' Line 283 Pos 5)
+sub vcl_fetch {
+----#########--
+
+Valid vcl_* methods are:
+    vcl_backend_error
+    vcl_backend_fetch
+    vcl_backend_response
+    vcl_deliver
+    vcl_fini
+    vcl_hash
+    vcl_hit
+    vcl_init
+    vcl_miss
+    vcl_pass
+    vcl_pipe
+    vcl_purge
+    vcl_recv
+    vcl_synth
+Running VCC-compiler failed, exited with 2
+VCL compilation failed
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]vi conf/default.vcl 
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]./sbin/varnishd -f /home/ngkm/varnish/conf/default.vcl -s malloc,2G -T 127.0.0.1:6082 -a :8082
+Error:
+Message from VCC-compiler:
+Expected an action, 'if', '{' or '}'
+('/home/ngkm/varnish/conf/default.vcl' Line 286 Pos 13)
+            error 401 "Not Authorized";
+------------#####----------------------
+
+Running VCC-compiler failed, exited with 2
+VCL compilation failed
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]vi conf/default.vcl 
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]./sbin/varnishd -f /home/ngkm/varnish/conf/default.vcl -s malloc,2G -T 127.0.0.1:6082 -a :8082
+Error:
+Message from VCC-compiler:
+Invalid return "deliver"
+('/home/ngkm/varnish/conf/default.vcl' Line 294 Pos 16)
+        return(deliver);
+---------------#######--
+
+Invalid return "synth"
+('/home/ngkm/varnish/conf/default.vcl' Line 286 Pos 19)
+          return (synth(401, "Not Authorized"));
+------------------#####-------------------------
+
+
+...in subroutine "vcl_backend_fetch"
+('/home/ngkm/varnish/conf/default.vcl' Line 283 Pos 5)
+sub vcl_backend_fetch {
+----#################--
+
+
+...which is the "vcl_backend_fetch" method
+Legal returns are: "abandon" "fail" "fetch"
+Running VCC-compiler failed, exited with 2
+VCL compilation failed
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]vi conf/default.vcl 
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]./sbin/varnishd -f /home/ngkm/varnish/conf/default.vcl -s malloc,2G -T 127.0.0.1:6082 -a :8082
+Error:
+Message from VCC-compiler:
+Invalid return "hash"
+('/home/ngkm/varnish/conf/default.vcl' Line 226 Pos 16)
+        return(hash);
+---------------####--
+
+
+...in subroutine "vcl_hash"
+('/home/ngkm/varnish/conf/default.vcl' Line 209 Pos 5)
+sub vcl_hash {
+----########--
+
+
+...which is the "vcl_hash" method
+Legal returns are: "fail" "lookup"
+Running VCC-compiler failed, exited with 2
+VCL compilation failed
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]vi conf/default.vcl 
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]vi conf/default.vcl 
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]./sbin/varnishd -f /home/ngkm/varnish/conf/default.vcl -s malloc,2G -T 127.0.0.1:6082 -a :8082
+Error:
+Message from VCC-compiler:
+Invalid return "lookup"
+('/home/ngkm/varnish/conf/default.vcl' Line 79 Pos 16)
+        return(lookup);
+---------------######--
+
+
+...in subroutine "vcl_recv"
+('/home/ngkm/varnish/conf/default.vcl' Line 71 Pos 5)
+sub vcl_recv {
+----########--
+
+
+...which is the "vcl_recv" method
+Legal returns are: "fail" "hash" "pass" "pipe" "purge" "synth" "vcl"
+Running VCC-compiler failed, exited with 2
+VCL compilation failed
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]vi conf/default.vcl 
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]./sbin/varnishd -f /home/ngkm/varnish/conf/default.vcl -s malloc,2G -T 127.0.0.1:6082 -a :8082
+Error:
+Message from VCC-compiler:
+Invalid return "lookup"
+('/home/ngkm/varnish/conf/default.vcl' Line 95 Pos 16)
+        return(lookup);
+---------------######--
+
+
+...in subroutine "vcl_recv"
+('/home/ngkm/varnish/conf/default.vcl' Line 71 Pos 5)
+sub vcl_recv {
+----########--
+
+
+...which is the "vcl_recv" method
+Legal returns are: "fail" "hash" "pass" "pipe" "purge" "synth" "vcl"
+Running VCC-compiler failed, exited with 2
+VCL compilation failed
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]timed out waiting for input: auto-logout
+Connection to 192.168.20.139 closed.
+➜  ~ ssh ngkm@192.168.20.139
+You have logged onto a secured server All accesses logged
+ngkm@192.168.20.139's password: 
+Last login: Tue Mar 20 17:34:07 2018 from 192.168.95.43
+You have logged onto a secured server All accesses logged
+ngkm@LY1F-R021705-VM13:[/home/ngkm]cd varnish
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]vi conf/default.vcl 
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]./sbin/varnishd -f /home/ngkm/varnish/conf/default.vcl -s malloc,2G -T 127.0.0.1:6082 -a :8082
+Debug: Platform: Linux,3.10.0-327.el7.x86_64,x86_64,-jnone,-smalloc,-smalloc,-hcritbit
+Debug: Child (90513) Started
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]timed out waiting for input: auto-logout
+Connection to 192.168.20.139 closed.
+➜  ~ ssh ngkm@192.168.20.139
+You have logged onto a secured server All accesses logged
+ngkm@192.168.20.139's password: 
+Last login: Tue Mar 20 21:01:43 2018 from 192.168.95.43
+You have logged onto a secured server All accesses logged
+ngkm@LY1F-R021705-VM13:[/home/ngkm]ps -ef | grep varnish
+ngkm      90503      1  0 21:02 ?        00:00:00 ./sbin/varnishd -f /home/ngkm/varnish/conf/default.vcl -s malloc,2G -T 127.0.0.1:6082 -a :8082
+ngkm      90513  90503  0 21:02 ?        00:00:00 ./sbin/varnishd -f /home/ngkm/varnish/conf/default.vcl -s malloc,2G -T 127.0.0.1:6082 -a :8082
+ngkm      90800  90747  0 21:10 pts/1    00:00:00 grep --color=auto varnish
+ngkm     126501      1  0 Mar13 ?        00:12:46 ./varnishlog -a -w /home/ngkm/varnish/var/varnish.log
+ngkm@LY1F-R021705-VM13:[/home/ngkm]timed out waiting for input: auto-logout
+Connection to 192.168.20.139 closed.
+➜  ~ ssh ngkm@192.168.20.139
+You have logged onto a secured server All accesses logged
+ngkm@192.168.20.139's password: 
+Last login: Tue Mar 20 21:10:30 2018 from 192.168.95.43
+You have logged onto a secured server All accesses logged
+ngkm@LY1F-R021705-VM13:[/home/ngkm]cd varnish
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]vi conf/default.vcl 
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]lsof -i :6082
+COMMAND    PID USER   FD   TYPE   DEVICE SIZE/OFF NODE NAME
+varnishd 90503 ngkm    8u  IPv4 47910886      0t0  TCP localhost:6082 (LISTEN)
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]kill 90503
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]./sbin/varnishd -f /home/ngkm/varnish/conf/default.vcl -s malloc,2G -T 127.0.0.1:6082 -a :8082
+Error:
+Message from VCC-compiler:
+Invalid return "synth"
+('/home/ngkm/varnish/conf/default.vcl' Line 293 Pos 21)
+            return (synth(401, "Not Authorized"));
+--------------------#####-------------------------
+
+
+...in subroutine "vcl_backend_response"
+('/home/ngkm/varnish/conf/default.vcl' Line 282 Pos 5)
+sub vcl_backend_response {
+----####################--
+
+
+...which is the "vcl_backend_response" method
+Legal returns are: "abandon" "deliver" "fail" "pass" "retry"
+Running VCC-compiler failed, exited with 2
+VCL compilation failed
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]vi conf/default.vcl 
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]./sbin/varnishd -f /home/ngkm/varnish/conf/default.vcl -s malloc,2G -T 127.0.0.1:6082 -a :8082
+Error:
+Message from VCC-compiler:
+'req.http.x-auth-token': Not available in method 'vcl_backend_response'.
+At: ('/home/ngkm/varnish/conf/default.vcl' Line 291 Pos 7)
+  if (req.http.x-auth-token && req.backend_hint == oauth) {
+------#####################--------------------------------
+
+Running VCC-compiler failed, exited with 2
+VCL compilation failed
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]vi conf/default.vcl 
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]./sbin/varnishd -f /home/ngkm/varnish/conf/default.vcl -s malloc,2G -T 127.0.0.1:6082 -a :8082
+Debug: Platform: Linux,3.10.0-327.el7.x86_64,x86_64,-jnone,-smalloc,-smalloc,-hcritbit
+Debug: Child (91850) Started
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]/usr/local/varnish/bin/varnishncsa -a -w /usr/local/varnish/var/logs/varnish.log -D -P /var/run/varnishncsa.pid
+-bash: /usr/local/varnish/bin/varnishncsa: No such file or directory
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]/usr/local/varnish/bin/varnishncsa -a -w /usr/local/varnish/var/logs/varnish.log -D -P /var/run/varnishncsa.pid
+-bash: /usr/local/varnish/bin/varnishncsa: No such file or directory
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]/home/ngkm/varnish/bin/varnishncsa -a -w /home/ngkm/varnish/var/logs/varnish.log -D -P /var/run/varnishncsa.pid
+Can't open output file (No such file or directory)
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]ls var/
+varnish  varnish.log
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]/home/ngkm/varnish/bin/varnishncsa -a -w /home/ngkm/varnish/var/varnish.log -D -P /var/run/varnishncsa.pid
+/var/run/varnishncsa.pid: Permission denied
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]/home/ngkm/varnish/bin/varnishncsa -a -w /home/ngkm/varnish/var/varnish.log
+^Cngkm@LY1F-R021705-VM13:[/home/ngkm/varnis
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]vi var/varnish.log 
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]lsof -i :6082
+COMMAND    PID USER   FD   TYPE   DEVICE SIZE/OFF NODE NAME
+varnishd 91840 ngkm    8u  IPv4 47926145      0t0  TCP localhost:6082 (LISTEN)
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]kill 91840
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]./sbin/varnishd -f /home/ngkm/varnish/conf/default.vcl -s malloc,2G -T 127.0.0.1:6082 -a :8082
+Error:
+Message from VCC-compiler:
+VCL version declaration missing
+Update your VCL to Version 4 syntax, and add
+    vcl 4.0;
+on the first line of the VCL files.
+('/home/ngkm/varnish/conf/default.vcl' Line 1 Pos 1)
+vcll 4.0;
+####-----
+
+Running VCC-compiler failed, exited with 2
+VCL compilation failed
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]vi conf/default.vcl 
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]vi conf/default.vcl 
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]./sbin/varnishd -f /home/ngkm/varnish/conf/default.vcl -s malloc,2G -T 127.0.0.1:6082 -a :8082
+Error:
+Message from VCC-compiler:
+Unused acl purge, defined:
+('/home/ngkm/varnish/conf/default.vcl' Line 53 Pos 5)
+acl purge {
+----#####--
+
+Running VCC-compiler failed, exited with 2
+VCL compilation failed
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]vi conf/default.vcl 
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]./sbin/varnishd -f /home/ngkm/varnish/conf/default.vcl -s malloc,2G -T 127.0.0.1:6082 -a :8082
+Debug: Platform: Linux,3.10.0-327.el7.x86_64,x86_64,-jnone,-smalloc,-smalloc,-hcritbit
+Debug: Child (116679) Started
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]/home/ngkm/varnish/bin/varnishncsa -a -w /home/ngkm/varnish/var/varnish.log
+^Cngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]vi var/varnish.log 
+
+^M^@^@L ^@^@<80>bereq 8 pass^@^@^@^@+^@^@P      
+^@^@<80>Start: 1521595981.403138 0.000000 0.000000^@^@^D^@^@^_  ^@^@<80>GET^@[^@^@      
+^@^@<80>/ngkm1/src/modules/knowledgeAppNew/kmSecondHome.html?code=ebe7df834098cca141cae7ee6b6100ee^@^@  ^@^@!   
+^@^@<80>HTTP/1.0^@^@^@^@^Z^@^@$ ^@^@<80>Host: 192.168.100.36:8843^@^@^@^Y^@^@$  
+^@^@<80>X-Real-IP: 192.168.95.43^@^@^@^@^Q^@^@$ 
+^@^@<80>Pragma: no-cache^@^@^@^@^X^@^@$ ^@^@<80>Cache-Control: no-cache^@^]^@^@$        
+^@^@<80>Upgrade-Insecure-Requests: 1^@^@^@^@<85>^@^@$   
+^@^@<80>User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36^@^@^@^@^^@^@$      
+^@^@<80>Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8^@^@^@#^@^@$       
+^@^@<80>Accept-Encoding: gzip, deflate, br^@^@)^@^@$    
+^@^@<80>Accept-Language: zh-CN,zh;q=0.9,en;q=0.8^@^@^@^@<80>^@^@$       
+^@^@<80>Cookie: ngkm1sessionid=16b9b7a7-4efc-4d21-998d-319e619aef68; _bpm_client_id.undefined.de5e=3b745cb9-6573-4cc2-952d-2e7736dc6a91^@/^@^@$ 
+^@^@<80>X-Forwarded-For: 192.168.95.43, 192.168.100.36^@^@^M^@^@$       
+^@^@<80>X-Varnish: 9^@^@^@^@^N^@^@<     
+^@^@<80>BACKEND_FETCH^@^@^@^F^@^@>      
+^@^@<80>fetch^@^@^@^V^@^@^N     
+^@^@<80>no backend connection^@^@^@,^@^@P       
+^@^@<80>Beresp: 1521595981.403162 0.000024 0.000024^@+^@^@P     
+^@^@<80>Error: 1521595981.403166 0.000027 0.000003^@^@  ^@^@)   
+^@^@<80>HTTP/1.1^@^@^@^@^D^@^@* ^@^@<80>503^@^T^@^@+    
+^@^@<80>Service Unavailable^@^U^@^@+    
+^@^@<80>Backend fetch failed^@^@^@^@$^@^@,      
+^@^@<80>Date: Wed, 21 Mar 2018 01:33:01 GMT^@^P^@^@,    
+^@^@<80>Server: Varnish^@^N^@^@<        
+^@^@<80>BACKEND_ERROR^@^@^@'^@^@,       
+^@^@<80>Content-Type: text/html; charset=utf-8^@^@^O^@^@,       
+^@^@<80>Retry-After: 5^@^@^H^@^@>       
+^@^@<80>deliver^@^Q^@^@O        
+^@^@<80>malloc Transient^@^@^@^@        ^@^@1   
+^@^@<80>HTTP/1.1^@^@^@^@^D^@^@2 ^@^@<80>503^@^U^@^@3    
+^@^@<80>Backend fetch failed^@^@^@^@$^@^@4      
+^@^@<80>Date: Wed, 21 Mar 2018 01:33:01 GMT^@^P^@^@4    
+^@^@<80>Server: Varnish^@'^@^@4 ^@^@<80>Content-Type: text/html; charset=utf-8^@^@^O^@^@4       
+^@^@<80>Retry-After: 5^@^@^D^@^@^M      
+^@^@<80>278^@^L^@^@S    
+^@^@<80>0 0 0 0 0 0^@^A^@^@M    
+^@^@<80>^@^@^@^@^L^@^@L^H^@^@@req 7 rxreq^@+^@^@P^H
+^@^@@Start: 1521595981.403050 0.000000 0.000000^@^@)^@^@P^H^@^@@Req: 1521595981.403050 0.000000 0.000000^@^@^@^@^U^@^@?^H
+^@^@@192.168.100.36 49163^@^@^@^@^D^@^@^O^H^@^@@GET^@[^@^@^P^H
+^@^@@/ngkm1/src/modules/knowledgeAppNew/kmSecondHome.html?code=ebe7df834098cca141cae7ee6b6100ee^@^@   ^@^@^Q^H
+^@^@@HTTP/1.0^@^@^@^@^Z^@^@^T^H
+^@^@@Host: 192.168.100.36:8843^@^@^@^Y^@^@^T^H
+^@^@@X-Real-IP: 192.168.95.43^@^@^@^@^_^@^@^T^H
+^@^@@X-Forwarded-For: 192.168.95.43^@^@^R^@^@^T^H
+^@^@@Connection: close^@^@^@^Q^@^@^T^H^@^@@Pragma: no-cache^@^@^@^@^X^@^@^T^H
+^@^@@Cache-Control: no-cache^@^]^@^@^T^H^@^@@Upgrade-Insecure-Requests: 1^@^@^@^@<85>^@^@^T^H
+^@^@@User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36^@^@^@^@^^@^@^T^H
+^@^@@Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8^@^@^@#^@^@^T^H^@^@@Accept-Encoding: gzip, deflate, br^@^@)^@^@^T^H
+^@^@@Accept-Language: zh-CN,zh;q=0.9,en;q=0.8^@^@^@^@<80>^@^@^T^H
+^@^@@Cookie: ngkm1sessionid=16b9b7a7-4efc-4d21-998d-319e619aef68; _bpm_client_id.undefined.de5e=3b745cb9-6573-4cc2-952d-2e7736dc6a91^@^_^@^@^U^H
+^@^@@X-Forwarded-For: 192.168.95.43^@^@/^@^@^T^H^@^@@X-Forwarded-For: 192.168.95.43, 192.168.100.36^@^@^E^@^@<^H
+^@^@@RECV^@^@^@^@^E^@^@>^H
+^@^@@pass^@^@^@^@^E^@^@<^H
+^@^@@HASH^@^@^@^@^G^@^@>^H
+^@^@@lookup^@^@^E^@^@<^H
+^@^@@PASS^@^@^@^@^F^@^@>^H
+^@^@@fetch^@^@^@^M^@^@K^H
+^@^@@bereq 9 pass^@^@^@^@+^@^@P^H
+^@^@@Fetch: 1521595981.403226 0.000176 0.000176^@^@    ^@^@^Y^H^@^@@HTTP/1.1^@^@^@^@^D^@^@^Z^H^@^@@503^@^U^@^@^[^H
+^@^@@Backend fetch failed^@^@^@^@$^@^@^\^H
+^@^@@Date: Wed, 21 Mar 2018 01:33:01 GMT^@^P^@^@^\^H
+^@^@@Server: Varnish^@'^@^@^\^H
+^@^@@Content-Type: text/html; charset=utf-8^@^@^O^@^@^\^H^@^@@Retry-After: 5^@^@^M^@^@^\^H
+^@^@@X-Varnish: 8^@^@^@^@^G^@^@^\^H
+^@^@@Age: 0^@^@^_^@^@^\^H
+^@^@@Via: 1.1 varnish (Varnish/5.2)^@^@^H^@^@<^H
+^@^@@DELIVER^@^H^@^@>^H^@^@@deliver^@-^@^@P^H
+^@^@@Process: 1521595981.403237 0.000186 0.000010^@^@^@^@^T^@^@^\^H
+^@^@@Content-Length: 278^@^R^@^@^\^H
+^@^@@Connection: close^@^@^@*^@^@P^H
+^@^@@Resp: 1521595981.403265 0.000214 0.000028^@^@^@^V^@^@Q^H
+^@^@@720 0 720 241 278 519^@^@^@^A^@^@M^H^@^@@^@^@^@^@^N^@^@L^G
+^@^@@sess 0 HTTP/1^@^@^@A^@^@^D^G
+^@^@@192.168.100.36 49163 a0 192.168.
+                                                                      29,1          Bot
+*********************************************************************************************************************
+*********************************************************************************************************************
+*********************************************************************************************************************
+*********************************************************************************************************************
+
+
+Last login: Mon Mar 19 10:30:25 on ttys001
+➜  ngwf git:(ngwf_test_2) ✗ cd
+➜  ~ clear 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+➜  ~ ssh ngkm@192.168.20.139
+You have logged onto a secured server All accesses logged
+ngkm@192.168.20.139's password: 
+Last login: Sat Mar 17 11:39:10 2018 from 192.168.95.43
+You have logged onto a secured server All accesses logged
+ngkm@LY1F-R021705-VM13:[/home/ngkm]cd varnish
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]ls
+bin  conf  default.vcl.zip  include  lib  sbin  share  var
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]cd conf/
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish/conf]vi default.vcl 
+
+
+
+
+
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]clea
+clean-binary-files  clear               
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]clear 
+
+
+
+
+
+
+
+
+
+
+
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]ps -ef | grep varnish
+ngkm      40721      1  0 Mar17 ?        00:00:10 ./sbin/varnishd -f /home/ngkm/varnish/conf/default.vcl -s malloc,2G -T 127.0.0.1:6082 -a :8082
+ngkm      40731  40721  0 Mar17 ?        00:01:04 ./sbin/varnishd -f /home/ngkm/varnish/conf/default.vcl -s malloc,2G -T 127.0.0.1:6082 -a :8082
+ngkm      81232  61005  0 16:32 pts/2    00:00:00 grep --color=auto varnish
+ngkm     126501      1  0 Mar13 ?        00:12:11 ./varnishlog -a -w /home/ngkm/varnish/var/varnish.log
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]lsof -i :6082
+COMMAND    PID USER   FD   TYPE   DEVICE SIZE/OFF NODE NAME
+varnishd 40721 ngkm    8u  IPv4 45550397      0t0  TCP localhost:6082 (LISTEN)
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]kill 40721
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]timed out waiting for input: auto-logout
+Connection to 192.168.20.139 closed.
+➜  ~ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+➜  ~ ssh ngkm@192.168.20.139
+You have logged onto a secured server All accesses logged
+ngkm@192.168.20.139's password: 
+Last login: Tue Mar 20 14:43:08 2018 from 192.168.95.43
+You have logged onto a secured server All accesses logged
+ngkm@LY1F-R021705-VM13:[/home/ngkm]./sbin/varnishd -f /home/ngkm/varnish/conf/default.vcl -s malloc,2G -T 127.0.0.1:6082 -a :8082
+-bash: ./sbin/varnishd: No such file or directory
+ngkm@LY1F-R021705-VM13:[/home/ngkm]cd varnish
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]./sbin/varnishd -f /home/ngkm/varnish/conf/default.vcl -s malloc,2G -T 127.0.0.1:6082 -a :8082
+Error:
+Message from VCC-compiler:
+Unknown variable 'req.backend'
+At: ('/home/ngkm/varnish/conf/default.vcl' Line 137 Pos 13)
+        set req.backend = default;
+------------###########-----------
+
+Running VCC-compiler failed, exited with 2
+VCL compilation failed
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]vi conf/default.vcl 
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]./sbin/varnishd -f /home/ngkm/varnish/conf/default.vcl -s malloc,2G -T 127.0.0.1:6082 -a :8082
+Error:
+Message from VCC-compiler:
+Unknown variable 'req.backend'
+At: ('/home/ngkm/varnish/conf/default.vcl' Line 137 Pos 13)
+        set req.backend = default;
+------------###########-----------
+
+Running VCC-compiler failed, exited with 2
+VCL compilation failed
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]vi conf/default.vcl 
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]./sbin/varnishd -f /home/ngkm/varnish/conf/default.vcl -s malloc,2G -T 127.0.0.1:6082 -a :8082
+Error:
+Message from VCC-compiler:
+Unknown variable 'req.backend'
+At: ('/home/ngkm/varnish/conf/default.vcl' Line 137 Pos 13)
+        set req.backend = default;
+------------###########-----------
+
+Running VCC-compiler failed, exited with 2
+VCL compilation failed
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]vi conf/default.vcl 
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]./sbin/varnishd -f /home/ngkm/varnish/conf/default.vcl -s malloc,2G -T 127.0.0.1:6082 -a :8082
+Error:
+Message from VCC-compiler:
+Unknown variable 'req.backend'
+At: ('/home/ngkm/varnish/conf/default.vcl' Line 148 Pos 13)
+        set req.backend = oauth;
+------------###########---------
+
+Running VCC-compiler failed, exited with 2
+VCL compilation failed
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]vi conf/default.vcl 
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]./sbin/varnishd -f /home/ngkm/varnish/conf/default.vcl -s malloc,2G -T 127.0.0.1:6082 -a :8082
+Error:
+Message from VCC-compiler:
+Unknown variable 'req.backend'
+At: ('/home/ngkm/varnish/conf/default.vcl' Line 137 Pos 13)
+        set req.backend = default;
+------------###########-----------
+
+Running VCC-compiler failed, exited with 2
+VCL compilation failed
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]vi conf/default.vcl 
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]./sbin/varnishd -f /home/ngkm/varnish/conf/default.vcl -s malloc,2G -T 127.0.0.1:6082 -a :8082
+Error:
+Message from VCC-compiler:
+Unknown variable 'req.backend'
+At: ('/home/ngkm/varnish/conf/default.vcl' Line 137 Pos 13)
+        set req.backend = server1;
+------------###########-----------
+
+Running VCC-compiler failed, exited with 2
+VCL compilation failed
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]vi conf/default.vcl 
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]./sbin/varnishd -f /home/ngkm/varnish/conf/default.vcl -s malloc,2G -T 127.0.0.1:6082 -a :8082
+Error:
+Message from VCC-compiler:
+Unknown argument 'default'
+('/home/ngkm/varnish/conf/default.vcl' Line 137 Pos 45)
+        set req.backend_hint = vdir.backend(default);
+--------------------------------------------#######--
+
+Running VCC-compiler failed, exited with 2
+VCL compilation failed
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]vi conf/default.vcl 
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]./sbin/varnishd -f /home/ngkm/varnish/conf/default.vcl -s malloc,2G -T 127.0.0.1:6082 -a :8082
+Error:
+Message from VCC-compiler:
+Unknown argument 'default'
+('/home/ngkm/varnish/conf/default.vcl' Line 76 Pos 45)
+        set req.backend_hint = vdir.backend(default);
+--------------------------------------------#######--
+
+Running VCC-compiler failed, exited with 2
+VCL compilation failed
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]vi conf/default.vcl 
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]./sbin/varnishd -f /home/ngkm/varnish/conf/default.vcl -s malloc,2G -T 127.0.0.1:6082 -a :8082
+Error:
+Message from VCC-compiler:
+Symbol not found: 'req.backend' (expected type BOOL):
+('/home/ngkm/varnish/conf/default.vcl' Line 224 Pos 32)
+  if (req.http.x-auth-token && req.backend == oauth) {
+-------------------------------###########------------
+
+Running VCC-compiler failed, exited with 2
+VCL compilation failed
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]vi conf/default.vcl 
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]./sbin/varnishd -f /home/ngkm/varnish/conf/default.vcl -s malloc,2G -T 127.0.0.1:6082 -a :8082
+Error:
+Message from VCC-compiler:
+VCL sub's named 'vcl*' are reserved names.
+('/home/ngkm/varnish/conf/default.vcl' Line 283 Pos 5)
+sub vcl_fetch {
+----#########--
+
+Valid vcl_* methods are:
+    vcl_backend_error
+    vcl_backend_fetch
+    vcl_backend_response
+    vcl_deliver
+    vcl_fini
+    vcl_hash
+    vcl_hit
+    vcl_init
+    vcl_miss
+    vcl_pass
+    vcl_pipe
+    vcl_purge
+    vcl_recv
+    vcl_synth
+Running VCC-compiler failed, exited with 2
+VCL compilation failed
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]vi conf/default.vcl 
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]./sbin/varnishd -f /home/ngkm/varnish/conf/default.vcl -s malloc,2G -T 127.0.0.1:6082 -a :8082
+Error:
+Message from VCC-compiler:
+Expected an action, 'if', '{' or '}'
+('/home/ngkm/varnish/conf/default.vcl' Line 286 Pos 13)
+            error 401 "Not Authorized";
+------------#####----------------------
+
+Running VCC-compiler failed, exited with 2
+VCL compilation failed
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]vi conf/default.vcl 
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]./sbin/varnishd -f /home/ngkm/varnish/conf/default.vcl -s malloc,2G -T 127.0.0.1:6082 -a :8082
+Error:
+Message from VCC-compiler:
+Invalid return "deliver"
+('/home/ngkm/varnish/conf/default.vcl' Line 294 Pos 16)
+        return(deliver);
+---------------#######--
+
+Invalid return "synth"
+('/home/ngkm/varnish/conf/default.vcl' Line 286 Pos 19)
+          return (synth(401, "Not Authorized"));
+------------------#####-------------------------
+
+
+...in subroutine "vcl_backend_fetch"
+('/home/ngkm/varnish/conf/default.vcl' Line 283 Pos 5)
+sub vcl_backend_fetch {
+----#################--
+
+
+...which is the "vcl_backend_fetch" method
+Legal returns are: "abandon" "fail" "fetch"
+Running VCC-compiler failed, exited with 2
+VCL compilation failed
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]vi conf/default.vcl 
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]./sbin/varnishd -f /home/ngkm/varnish/conf/default.vcl -s malloc,2G -T 127.0.0.1:6082 -a :8082
+Error:
+Message from VCC-compiler:
+Invalid return "hash"
+('/home/ngkm/varnish/conf/default.vcl' Line 226 Pos 16)
+        return(hash);
+---------------####--
+
+
+...in subroutine "vcl_hash"
+('/home/ngkm/varnish/conf/default.vcl' Line 209 Pos 5)
+sub vcl_hash {
+----########--
+
+
+...which is the "vcl_hash" method
+Legal returns are: "fail" "lookup"
+Running VCC-compiler failed, exited with 2
+VCL compilation failed
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]vi conf/default.vcl 
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]vi conf/default.vcl 
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]./sbin/varnishd -f /home/ngkm/varnish/conf/default.vcl -s malloc,2G -T 127.0.0.1:6082 -a :8082
+Error:
+Message from VCC-compiler:
+Invalid return "lookup"
+('/home/ngkm/varnish/conf/default.vcl' Line 79 Pos 16)
+        return(lookup);
+---------------######--
+
+
+...in subroutine "vcl_recv"
+('/home/ngkm/varnish/conf/default.vcl' Line 71 Pos 5)
+sub vcl_recv {
+----########--
+
+
+...which is the "vcl_recv" method
+Legal returns are: "fail" "hash" "pass" "pipe" "purge" "synth" "vcl"
+Running VCC-compiler failed, exited with 2
+VCL compilation failed
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]vi conf/default.vcl 
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]./sbin/varnishd -f /home/ngkm/varnish/conf/default.vcl -s malloc,2G -T 127.0.0.1:6082 -a :8082
+Error:
+Message from VCC-compiler:
+Invalid return "lookup"
+('/home/ngkm/varnish/conf/default.vcl' Line 95 Pos 16)
+        return(lookup);
+---------------######--
+
+
+...in subroutine "vcl_recv"
+('/home/ngkm/varnish/conf/default.vcl' Line 71 Pos 5)
+sub vcl_recv {
+----########--
+
+
+...which is the "vcl_recv" method
+Legal returns are: "fail" "hash" "pass" "pipe" "purge" "synth" "vcl"
+Running VCC-compiler failed, exited with 2
+VCL compilation failed
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]timed out waiting for input: auto-logout
+Connection to 192.168.20.139 closed.
+➜  ~ ssh ngkm@192.168.20.139
+You have logged onto a secured server All accesses logged
+ngkm@192.168.20.139's password: 
+Last login: Tue Mar 20 17:34:07 2018 from 192.168.95.43
+You have logged onto a secured server All accesses logged
+ngkm@LY1F-R021705-VM13:[/home/ngkm]cd varnish
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]vi conf/default.vcl 
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]./sbin/varnishd -f /home/ngkm/varnish/conf/default.vcl -s malloc,2G -T 127.0.0.1:6082 -a :8082
+Debug: Platform: Linux,3.10.0-327.el7.x86_64,x86_64,-jnone,-smalloc,-smalloc,-hcritbit
+Debug: Child (90513) Started
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]timed out waiting for input: auto-logout
+Connection to 192.168.20.139 closed.
+➜  ~ ssh ngkm@192.168.20.139
+You have logged onto a secured server All accesses logged
+ngkm@192.168.20.139's password: 
+Last login: Tue Mar 20 21:01:43 2018 from 192.168.95.43
+You have logged onto a secured server All accesses logged
+ngkm@LY1F-R021705-VM13:[/home/ngkm]ps -ef | grep varnish
+ngkm      90503      1  0 21:02 ?        00:00:00 ./sbin/varnishd -f /home/ngkm/varnish/conf/default.vcl -s malloc,2G -T 127.0.0.1:6082 -a :8082
+ngkm      90513  90503  0 21:02 ?        00:00:00 ./sbin/varnishd -f /home/ngkm/varnish/conf/default.vcl -s malloc,2G -T 127.0.0.1:6082 -a :8082
+ngkm      90800  90747  0 21:10 pts/1    00:00:00 grep --color=auto varnish
+ngkm     126501      1  0 Mar13 ?        00:12:46 ./varnishlog -a -w /home/ngkm/varnish/var/varnish.log
+ngkm@LY1F-R021705-VM13:[/home/ngkm]timed out waiting for input: auto-logout
+Connection to 192.168.20.139 closed.
+➜  ~ ssh ngkm@192.168.20.139
+You have logged onto a secured server All accesses logged
+ngkm@192.168.20.139's password: 
+Last login: Tue Mar 20 21:10:30 2018 from 192.168.95.43
+You have logged onto a secured server All accesses logged
+ngkm@LY1F-R021705-VM13:[/home/ngkm]cd varnish
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]vi conf/default.vcl 
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]lsof -i :6082
+COMMAND    PID USER   FD   TYPE   DEVICE SIZE/OFF NODE NAME
+varnishd 90503 ngkm    8u  IPv4 47910886      0t0  TCP localhost:6082 (LISTEN)
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]kill 90503
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]./sbin/varnishd -f /home/ngkm/varnish/conf/default.vcl -s malloc,2G -T 127.0.0.1:6082 -a :8082
+Error:
+Message from VCC-compiler:
+Invalid return "synth"
+('/home/ngkm/varnish/conf/default.vcl' Line 293 Pos 21)
+            return (synth(401, "Not Authorized"));
+--------------------#####-------------------------
+
+
+...in subroutine "vcl_backend_response"
+('/home/ngkm/varnish/conf/default.vcl' Line 282 Pos 5)
+sub vcl_backend_response {
+----####################--
+
+
+...which is the "vcl_backend_response" method
+Legal returns are: "abandon" "deliver" "fail" "pass" "retry"
+Running VCC-compiler failed, exited with 2
+VCL compilation failed
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]vi conf/default.vcl 
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]./sbin/varnishd -f /home/ngkm/varnish/conf/default.vcl -s malloc,2G -T 127.0.0.1:6082 -a :8082
+Error:
+Message from VCC-compiler:
+'req.http.x-auth-token': Not available in method 'vcl_backend_response'.
+At: ('/home/ngkm/varnish/conf/default.vcl' Line 291 Pos 7)
+  if (req.http.x-auth-token && req.backend_hint == oauth) {
+------#####################--------------------------------
+
+Running VCC-compiler failed, exited with 2
+VCL compilation failed
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]vi conf/default.vcl 
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]./sbin/varnishd -f /home/ngkm/varnish/conf/default.vcl -s malloc,2G -T 127.0.0.1:6082 -a :8082
+Debug: Platform: Linux,3.10.0-327.el7.x86_64,x86_64,-jnone,-smalloc,-smalloc,-hcritbit
+Debug: Child (91850) Started
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]/usr/local/varnish/bin/varnishncsa -a -w /usr/local/varnish/var/logs/varnish.log -D -P /var/run/varnishncsa.pid
+-bash: /usr/local/varnish/bin/varnishncsa: No such file or directory
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]/usr/local/varnish/bin/varnishncsa -a -w /usr/local/varnish/var/logs/varnish.log -D -P /var/run/varnishncsa.pid
+-bash: /usr/local/varnish/bin/varnishncsa: No such file or directory
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]/home/ngkm/varnish/bin/varnishncsa -a -w /home/ngkm/varnish/var/logs/varnish.log -D -P /var/run/varnishncsa.pid
+Can't open output file (No such file or directory)
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]ls var/
+varnish  varnish.log
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]/home/ngkm/varnish/bin/varnishncsa -a -w /home/ngkm/varnish/var/varnish.log -D -P /var/run/varnishncsa.pid
+/var/run/varnishncsa.pid: Permission denied
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]/home/ngkm/varnish/bin/varnishncsa -a -w /home/ngkm/varnish/var/varnish.log
+^Cngkm@LY1F-R021705-VM13:[/home/ngkm/varnis
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]vi var/varnish.log 
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]lsof -i :6082
+COMMAND    PID USER   FD   TYPE   DEVICE SIZE/OFF NODE NAME
+varnishd 91840 ngkm    8u  IPv4 47926145      0t0  TCP localhost:6082 (LISTEN)
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]kill 91840
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]./sbin/varnishd -f /home/ngkm/varnish/conf/default.vcl -s malloc,2G -T 127.0.0.1:6082 -a :8082
+Error:
+Message from VCC-compiler:
+VCL version declaration missing
+Update your VCL to Version 4 syntax, and add
+    vcl 4.0;
+on the first line of the VCL files.
+('/home/ngkm/varnish/conf/default.vcl' Line 1 Pos 1)
+vcll 4.0;
+####-----
+
+Running VCC-compiler failed, exited with 2
+VCL compilation failed
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]vi conf/default.vcl 
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]vi conf/default.vcl 
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]./sbin/varnishd -f /home/ngkm/varnish/conf/default.vcl -s malloc,2G -T 127.0.0.1:6082 -a :8082
+Error:
+Message from VCC-compiler:
+Unused acl purge, defined:
+('/home/ngkm/varnish/conf/default.vcl' Line 53 Pos 5)
+acl purge {
+----#####--
+
+Running VCC-compiler failed, exited with 2
+VCL compilation failed
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]vi conf/default.vcl 
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]./sbin/varnishd -f /home/ngkm/varnish/conf/default.vcl -s malloc,2G -T 127.0.0.1:6082 -a :8082
+Debug: Platform: Linux,3.10.0-327.el7.x86_64,x86_64,-jnone,-smalloc,-smalloc,-hcritbit
+Debug: Child (116679) Started
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]/home/ngkm/varnish/bin/varnishncsa -a -w /home/ngkm/varnish/var/varnish.log
+^Cngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]vi var/varnish.log 
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]/home/ngkm/varnish/bin/varnishncsa -a -w /home/ngkm/varnish/var/varnish.log
+^X^Cngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]vi var/varnish.log 
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]vi conf/default.vcl 
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]lsof -i :6082
+COMMAND     PID USER   FD   TYPE   DEVICE SIZE/OFF NODE NAME
+varnishd 116669 ngkm    8u  IPv4 48274229      0t0  TCP localhost:6082 (LISTEN)
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]kill 116669
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]./sbin/varnishd -f /home/ngkm/varnish/conf/default.vcl -s malloc,2G -T 127.0.0.1:6082 -a :8082
+Error:
+Message from VCC-compiler:
+'req.http.x-auth-token': Not available in method 'vcl_backend_response'.
+At: ('/home/ngkm/varnish/conf/default.vcl' Line 288 Pos 7)
+  if (req.http.x-auth-token && req.backend_hint == oauth) {
+------#####################--------------------------------
+
+Running VCC-compiler failed, exited with 2
+VCL compilation failed
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]timed out waiting for input: auto-logout
+Connection to 192.168.20.139 closed.
+➜  ~ ssh ngkm@192.168.20.139
+You have logged onto a secured server All accesses logged
+ngkm@192.168.20.139's password: 
+Last login: Wed Mar 21 09:16:21 2018 from 192.168.95.43
+You have logged onto a secured server All accesses logged
+ngkm@LY1F-R021705-VM13:[/home/ngkm]cd varnish
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]vi conf/default.vcl 
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]./sbin/varnishd -f /home/ngkm/varnish/conf/default.vcl -s malloc,2G -T 127.0.0.1:6082 -a :8082
+Debug: Platform: Linux,3.10.0-327.el7.x86_64,x86_64,-jnone,-smalloc,-smalloc,-hcritbit
+Debug: Child (120858) Started
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]/home/ngkm/varnish/bin/varnishncsa -a -w /home/ngkm/varnish/var/varnish.log
+^Cngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]vi var/varnish.log 
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]rm -rf var/varnish.log 
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]/home/ngkm/varnish/bin/varnishncsa -a -w /home/ngkm/varnish/var/varnish.log
+^Cngkm@LY1F-R021705-VM13:[/home/ngkm/varnisvi var/varnish.log ^C
+ngkm@LY1F-R021705-VM13:[/home/ngkm/varnish]vi var/varnish.log 
+
+192.168.100.36 - - [21/Mar/2018:11:10:02 +0800] "GET http://192.168.100.36:8843/ngkm1/src/modules/knowledgeApp/kmHome.html HTTP/1.0" 503 282 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"
+192.168.100.36 - - [21/Mar/2018:11:10:04 +0800] "GET http://192.168.100.36:8843/ngkm1/src/modules/knowledgeApp/kmHome.html HTTP/1.0" 503 278 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"
+~                                                                                         
+~                                                                                         
+~                                                                                         
+~                                                                                         
+~                                                                                         
+~                                                                                         
+~                                                                                         
+~                                                                                         
+~                                                                                         
+~                                                                                         
+~                                                                                         
+~                                                                                         
+~                                                                                         
+~                                                                                         
+~                                                                                         
+~                                                                                         
+~                                                                                         
+~                                                                                         
+~                                                                                         
+~                                                                                         
+~                                                                                         
+~                                                                                         
+~                                                                                         
+~                                                                                         
+~                                                                                         
+~                                                                                         
+~                                                                                         
+~                                                                                         
+~                                                                                         
+~                                                                                         
+~                                                                                         
+~                                                                                         
+~                                                                                         
+~                                                                                         
+~                                                                                         
+~                                                                                         
+~                                                                                         
+~                                                                                         
+~                                                                                         
+~                                                                                         
+~                                                                                         
+~                                                                                         
+~                                                                                         
+~                                                                                         
+~                                                                                         
+~                                                                                         
+"var/varnish.log" 2L, 536C                                              1,1           All
